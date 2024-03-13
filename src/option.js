@@ -3,7 +3,7 @@ import { nonce } from "./nonce";
 const template = document.createElement('template');
 
 template.innerHTML = /* html */`
-  <style nonce="${nonce}">
+  <style nonce="${nonce()}">
     :host {
       display: block;
       list-style: none;

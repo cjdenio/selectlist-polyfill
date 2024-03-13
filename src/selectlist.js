@@ -41,7 +41,7 @@ const listboxStyles = /* css */`
 
 const headTemplate = document.createElement('template');
 headTemplate.innerHTML = /* html */`
-<style nonce="${nonce}">
+<style nonce="${nonce()}">
   @layer {
     ${popoverStyles}
     x-selectlist ${listboxStyles}
@@ -53,7 +53,7 @@ document.head.prepend(headTemplate.content.cloneNode(true));
 
 const template = document.createElement('template');
 template.innerHTML = /* html */`
-  <style nonce="${nonce}">
+  <style nonce="${nonce()}">
     ${popoverStyles}
     ${listboxStyles}
 
