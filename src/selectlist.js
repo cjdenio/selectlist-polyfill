@@ -1,3 +1,4 @@
+import { nonce } from "./nonce";
 
 const popoverSupported = typeof HTMLElement !== 'undefined' &&
   typeof HTMLElement.prototype === 'object' &&
@@ -40,7 +41,7 @@ const listboxStyles = /* css */`
 
 const headTemplate = document.createElement('template');
 headTemplate.innerHTML = /* html */`
-<style>
+<style nonce="${nonce}">
   @layer {
     ${popoverStyles}
     x-selectlist ${listboxStyles}
@@ -52,7 +53,7 @@ document.head.prepend(headTemplate.content.cloneNode(true));
 
 const template = document.createElement('template');
 template.innerHTML = /* html */`
-  <style>
+  <style nonce="${nonce}">
     ${popoverStyles}
     ${listboxStyles}
 
